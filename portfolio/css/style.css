@@ -1,0 +1,241 @@
+body{
+    font-family: 'Raleway', sans-serif; 
+    margin: 0;
+    padding: 0;
+    font-size: 24px; 
+  }
+  
+  h1{
+    font-size: 2em;
+    text-align: center;
+    line-height: 2;
+  }
+  p{
+      text-align: center;
+  }
+  
+  h2{
+    font-size: 1.5em;
+    text-align: center;
+    padding: 5px;
+  }
+  
+  p {
+    padding: 0 30px;
+  }
+  
+  a.skip{
+    background: white;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: -40px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+  }
+  
+  a.skip:focus{
+    top:20px;
+    color: black;
+    text-decoration-style: solid;
+  }
+  
+  *:focus{
+    border: 2px solid black;
+  }
+  
+  footer{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  
+
+  img{
+      width: 350px;
+      height: auto;
+  }
+
+  
+
+  
+  /* Cards! */
+  .pricing{
+      min-height: 500px;
+      /*Your code here.*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    
+  }
+  
+  .card {
+    margin: 12px;
+    background: #fff;
+    border-radius: 7px;
+    padding: 0 0 50px 0;
+    /*Your code here.*/
+    /*Take a look at flex-basis*/
+    flex-basis: 400px;
+  
+  
+  }
+  
+  .card > header{
+    background: black;
+    border: 2px solid red;
+    padding: 20px 0;
+    border-radius: 7px 7px 0 0;
+  
+  }
+  
+  .card > ul{
+    list-style: none;
+    padding: 0;
+  }
+  
+  .card > ul li {
+    width: 90%;
+    margin: 20px auto;
+  }
+  
+  .card button{
+    width: 90%;
+    height: 40px;
+    border: 0;
+    margin-left: 12px;
+    border-radius: 7px;
+    background: gray;
+    color: white;
+    font-size: 1em;
+  }
+  
+  .card h3{
+    font-size: 4em;
+    color: white;
+    text-align: center;
+  }
+  
+  .card_big{
+    -webkit-transform: initial;
+            transform: initial;
+  }
+  
+  /* Gallery! */
+  .gallery{
+    min-height: 600px;
+    /*Your code here again.*/
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    column-gap: 10px;
+    row-gap: 10px;
+  
+  }
+  
+  .gallery > img{
+    border: 5px black solid;
+    margin: 10px;
+    width: 300px;
+    opacity: 0.5;
+    width: 95%;
+    height: 95%;
+
+  }
+
+  .gallery img:hover{
+    opacity: 1;
+  }
+  
+  /* Navbar */
+  header{
+    background: #fff;
+    border-bottom: 3px solid black;
+    /*Your  code here again.*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav_links{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nav_item a{
+    color: red;
+    text-decoration: none;
+  }
+  
+  .nav_item a:hover, a:focus{
+    color: blue;
+    text-decoration: underline;
+    -webkit-text-decoration-style: dotted;
+            text-decoration-style: dotted;
+  }
+  
+  @media screen and (min-width: 850px){
+  
+    /* Cards! */
+    .card {
+      flex-basis: 225px;
+  
+    }
+  
+    .card_big{
+      -webkit-transform: scaleX(1.12);
+              transform: scaleX(1.12);
+    }
+  
+    /* Navbar */
+    header{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  
+    }
+  
+    .nav_links{ 
+      flex-direction: row;
+  
+    }
+  
+    .nav_item a{
+      padding: 10px;
+    }
+  }
+  
+  @media print { 
+    .card {
+      flex-basis: 200px;
+    }
+    body{
+      background-image: none;
+    }
+    .pricing{
+      align-items: flex-start;
+    }
+    .gallery, #gallery{
+      display: none;
+    }
+    /*Your code here again.*/
+    /*You will want four selectors*/  
+  }
+  @media screen and (prefers-reduced-motion: reduce){
+    #logo{
+        animation: none; /* Removes scroll animation */
+    }
+  }
+  
+  
+  /*Your code here again.*/ 
+  /*Add media query to handle reduced-motion*/
+  
