@@ -19,6 +19,9 @@ body{
     text-align: center;
     padding: 5px;
   }
+  main{
+    min-height: 775px;
+  }
   
   p {
     padding: 0 30px;
@@ -57,8 +60,6 @@ body{
     color: white;
     padding: 10px;
     text-align: center;
-
-    
     width: 100%;
   }
   
@@ -68,17 +69,8 @@ body{
       height: auto;
   }
 
-  
-
-  
-   
   .pricing{
       min-height: 500px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    
   }
   
   .card {
@@ -89,7 +81,6 @@ body{
     /*Your code here.*/
     /*Take a look at flex-basis*/
     flex-basis: 400px;
-  
   
   }
   
@@ -163,11 +154,10 @@ body{
   header{
     background: #fff;
     border-bottom: 3px solid black;
-    padding-bottom: 15px;
-    /*Your  code here again.*/
+    padding-bottom: 10px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
   
@@ -188,32 +178,25 @@ body{
             text-decoration-style: dotted;
   }
   
+  @media screen and (max-width: 849px){
+    #title{
+      display: none;
+    }
+  }
+
   @media screen and (min-width: 850px){
   
     /* Cards! */
     .card {
       flex-basis: 225px;
-  
     }
-  
     .card_big{
       -webkit-transform: scaleX(1.12);
               transform: scaleX(1.12);
     }
-  
-    /* Navbar */
-    header{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-  
-    }
-  
     .nav_links{ 
       flex-direction: row;
-  
     }
-  
     .nav_item a{
       padding: 10px;
     }
@@ -221,27 +204,26 @@ body{
   
   @media screen and (prefers-reduced-motion: reduce){
     #title{
-        animation: none; /* Removes scroll animation */
+        display: none; /* Removes scroll animation */
     }
   }
-  
   .wrapper{
     position: relative;
-
   }
-
 
   #title{
     position: absolute;
-    right: -450px;
+    left: 1500px;
+    top: -10px;
     -webkit-animation: slide 0.5s forwards;
-    -webkit-animation-delay: 2s;
+    -webkit-animation-delay: 1.5s;
     animation: slide 0.5s forwards;
-    animation-delay: 2s;
+    animation-delay: 1.5s;
   }
 
-  #title img{
+  #title {
     width: 35px;
+    margin-bottom: 50px;
   }
   @-webkit-keyframes slide{
     100%{
@@ -253,3 +235,50 @@ body{
       left: 0;
     }
   }
+
+  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin: 0px auto;
+}
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
